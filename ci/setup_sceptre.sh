@@ -2,7 +2,7 @@
 set -e
 
 # install app
-pip install --upgrade spectre
+pip install spectre
 # install contributions
 mkdir resolvers
 wget https://raw.githubusercontent.com/cloudreach/sceptre/v1/contrib/ssm-resolver/ssm.py -O resolvers/ssm.py
