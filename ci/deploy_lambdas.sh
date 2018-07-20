@@ -7,6 +7,7 @@ S3_BUCKET=$(aws cloudformation list-exports --query "Exports[?Name=='us-east-1-e
 S3_BUCKET_PATH="$REPO_NAME/$TRAVIS_BRANCH"
 
 LAMBDA_ROOT_DIR=lambdas
+rm -rf $LAMBDA_DIR/*.zip
 LAMBDA_DIRS=$(ls -d $LAMBDA_ROOT_DIR/*)
 for lambda_dir in $LAMBDA_DIRS
 do
