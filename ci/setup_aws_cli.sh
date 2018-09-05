@@ -2,11 +2,10 @@
 set -e
 
 # double interpolate vars when using multiple branches
-if [ "$TRAVIS_BRANCH" != "master" ]; then
-  eval export "AwsCfServiceRoleArn=\$AwsCfServiceRoleArn_$TRAVIS_BRANCH"
-  eval export "AwsTravisAccessKey=\$AwsTravisAccessKey_$TRAVIS_BRANCH"
-  eval export "AwsTravisSecretAccessKey=\$AwsTravisSecretAccessKey_$TRAVIS_BRANCH"
-fi
+
+eval export "AwsCfServiceRoleArn=$RoleArn"
+eval export "AwsTravisAccessKey=$AccessKey"
+eval export "AwsTravisSecretAccessKey=$SecretAccessKey"
 
 pip install --upgrade awscli
 mkdir ~/.aws
